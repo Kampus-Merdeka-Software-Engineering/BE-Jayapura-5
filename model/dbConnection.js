@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize');
-const msql2 = require('mysql2');
+const mysql = require('mysql2');
 
-const sequelize = new Sequelize('Database', 'root', '', {
+const dbConection = new Sequelize('djour', 'root', '', {
     host : 'localhost',
     dialect : 'mysql'
 });
+module.exports = dbConection;

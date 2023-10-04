@@ -1,15 +1,17 @@
 const express = require('express');
-const router = express.Router();
-
+// const router = express.Router();
+const Checkout = require('../model/checkOut');
 // Routing ke halaman Home
-router.get('/', (req, res) => {
-    res.render('home');//dalam tanda petik adalah nama file tampilan yang ada di dalam folder "views"
-  });
-  // Routing ke halaman 
-  
-  // Routingan Untuk Registrasi
-  router.get('/accesories', (req, res) => {
-    res.render('accesories');//dalam tanda petik adalah nama file tampilan yang ada di dalam folder "views"
-  });
+// router.post('/checkout', (req, res) => {
+//   res.send('pesanan telah masuk');
+// });
+async function checkout(req, res){
+  try {
+      const checkout = await Checkout.create(req.body);
+      res.json({ success: true, checkout });
+  } catch (err) {
+      res.status(500).json({ success: false, error: err.message });
+  }
+}
 
-  module.exports = router;
+  module.exports = checkout;
