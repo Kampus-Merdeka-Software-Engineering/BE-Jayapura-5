@@ -11,7 +11,7 @@ const userRouter = require('./routes/users');
 app.use(express.urlencoded({ extended: false })); //supaya dapat menerima body
 // seting data json
 app.use(express.json());
-
+app.use(cors());
 app.use('/checkout', productsRouter);
 app.use('/registration', userRouter.registration);
 app.use('/login', userRouter.login);
