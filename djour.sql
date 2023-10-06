@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2023 at 04:49 AM
+-- Generation Time: Oct 06, 2023 at 03:12 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `checkout` (
   `id` int(11) NOT NULL,
   `product_name` varchar(255) NOT NULL,
+  `quantity` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `addres` text NOT NULL,
@@ -42,9 +43,8 @@ CREATE TABLE `checkout` (
 -- Dumping data for table `checkout`
 --
 
-INSERT INTO `checkout` (`id`, `product_name`, `price`, `name`, `addres`, `phone_number`, `payment_method`, `shipping_method`) VALUES
-(1, '', 'Rp 5000', 'Nur Rukhan Saputra', 'Kabupaten Kebumen Jawa Tengah', '085727165906', 'Payleter', 'Sipaling Cepat'),
-(2, '', 'Rp 5000', 'Rukhan', 'Indonesia', '000000000000', 'dana', 'jne');
+INSERT INTO `checkout` (`id`, `product_name`, `quantity`, `price`, `name`, `addres`, `phone_number`, `payment_method`, `shipping_method`) VALUES
+(1, 'tes', '2', '5000', 'tes', 'indonesia', '000000000', 'tes', 'jne');
 
 -- --------------------------------------------------------
 
@@ -65,11 +65,18 @@ CREATE TABLE `login` (
 --
 
 CREATE TABLE `registration` (
-  `id` int(25) DEFAULT NULL,
+  `id` int(25) NOT NULL,
   `user_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `registration`
+--
+
+INSERT INTO `registration` (`id`, `user_name`, `email`, `password`) VALUES
+(1, 'nur_rukhan', 'nurrukhans@gmail.com', 'rukhansaputra');
 
 --
 -- Indexes for dumped tables
@@ -82,6 +89,12 @@ ALTER TABLE `checkout`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `registration`
+--
+ALTER TABLE `registration`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -89,7 +102,13 @@ ALTER TABLE `checkout`
 -- AUTO_INCREMENT for table `checkout`
 --
 ALTER TABLE `checkout`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `registration`
+--
+ALTER TABLE `registration`
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
