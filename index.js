@@ -13,7 +13,8 @@ app.use(express.urlencoded({ extended: false })); //supaya dapat menerima body
 app.use(express.json());
 
 app.use('/checkout', productsRouter);
-app.use('/registration', userRouter);
+app.use('/registration', userRouter.registration);
+app.use('/login', userRouter.login);
 app.listen(5001, () => {
   console.log('App listening on port 5001');
   dbConnection.authenticate().then(() => {

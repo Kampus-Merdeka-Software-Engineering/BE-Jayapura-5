@@ -2,16 +2,33 @@ const express = require('express');
 const Registration = require('../model/user');
 
 //registrasi
-async function registration(req, res){
+async function registration(req, res) {
     try {
         const registration = await Registration.create(req.body);
-        res.json({ success: true, checkout });
+        res.json({
+            success: true,
+            checkout
+        });
     } catch (err) {
-        res.status(500).json({ success: false, error: err.message });
+        res.status(500).json({
+            success: false,
+            error: err.message
+        });
     }
-  }
+}
 
-  
+
 // login
+async function login(req, res) {
+    const user = await Registration.findOne({
+        where:{
+            email:req.body.email,
+            password:req.body.password
+        }
+    })
+    res.status(200).json({
+        data: user
+    })
+}
 
-module.exports = registration;
+module.exports = {registration, login};
