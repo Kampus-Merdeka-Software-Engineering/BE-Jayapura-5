@@ -4,7 +4,7 @@
   "description": "system back-end",
   "main": "index.js",
   "scripts": {
-    "index": "node index.js",
+    "start": "node index.js",
     "test": "npm run index"
   },
   "author": "",
