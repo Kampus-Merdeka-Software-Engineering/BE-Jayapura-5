@@ -22,7 +22,7 @@ async function registration(req, res) {
 async function login(req, res) {
     const user = await Registration.findOne({
         where:{
-            email:req.body.email,
+            user_name:req.body.user_name,
             password:req.body.password
         }
     })
