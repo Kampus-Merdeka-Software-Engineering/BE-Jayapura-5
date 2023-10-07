@@ -7,7 +7,7 @@ async function registration(req, res) {
         const registration = await Registration.create(req.body);
         res.json({
             success: true,
-            checkout
+            registration
         });
     } catch (err) {
         res.status(500).json({
