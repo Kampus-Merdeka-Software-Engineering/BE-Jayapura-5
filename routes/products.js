@@ -6,6 +6,7 @@ const Checkout = require('../model/checkOut');
 //   res.send('pesanan telah masuk');
 // });
 async function checkout(req, res) {
+ console.log(req.body);
   try {
     const checkout = await Checkout.create(req.body);
     res.json({

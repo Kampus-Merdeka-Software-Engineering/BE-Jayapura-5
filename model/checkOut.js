@@ -25,7 +25,7 @@ const checkOut = dbConection.define("checkout", {
     phone_number: {
         type: sequelize.DataTypes.STRING
     },
-    addres: {
+    address: {
         type: sequelize.DataTypes.TEXT
     },
     payment_method: {

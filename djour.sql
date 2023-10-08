@@ -33,7 +33,7 @@ CREATE TABLE `checkout` (
   `quantity` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `addres` text NOT NULL,
+  `address` text NOT NULL,
   `phone_number` varchar(255) NOT NULL,
   `payment_method` varchar(255) NOT NULL,
   `shipping_method` varchar(255) NOT NULL
