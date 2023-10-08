@@ -8,7 +8,9 @@ const dbConnection = require('./model/dbConnection');
 const userRouter = require('./routes/users');
 // agar dapat mengakses folder public
 // app.use(express.static('static'));
-app.use(express.urlencoded({ extended: false })); //supaya dapat menerima body
+app.use(express.urlencoded({
+  extended: false
+})); //supaya dapat menerima body
 // seting data json
 app.use(express.json());
 app.use(cors());

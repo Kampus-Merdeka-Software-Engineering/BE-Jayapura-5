@@ -21,9 +21,9 @@ async function registration(req, res) {
 // login
 async function login(req, res) {
     const user = await Registration.findOne({
-        where:{
-            user_name:req.body.user_name,
-            password:req.body.password
+        where: {
+            user_name: req.body.user_name,
+            password: req.body.password
         }
     })
     res.status(200).json({
@@ -31,4 +31,7 @@ async function login(req, res) {
     })
 }
 
-module.exports = {registration, login};
+module.exports = {
+    registration,
+    login
+};

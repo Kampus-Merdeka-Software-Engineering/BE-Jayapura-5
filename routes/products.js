@@ -5,13 +5,19 @@ const Checkout = require('../model/checkOut');
 // router.post('/checkout', (req, res) => {
 //   res.send('pesanan telah masuk');
 // });
-async function checkout(req, res){
+async function checkout(req, res) {
   try {
-      const checkout = await Checkout.create(req.body);
-      res.json({ success: true, checkout });
+    const checkout = await Checkout.create(req.body);
+    res.json({
+      success: true,
+      checkout
+    });
   } catch (err) {
-      res.status(500).json({ success: false, error: err.message });
+    res.status(500).json({
+      success: false,
+      error: err.message
+    });
   }
 }
 
-  module.exports = checkout;
+module.exports = checkout;
